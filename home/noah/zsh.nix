@@ -32,10 +32,11 @@
       gc = "git commit -m $1";
       gca = "gaa && gc $1";
 
-      gp = "git push origin";
+      gp = "git push";
+      gpo = "gp origin";
 
       # Nixos
-      nixos-backup = "";
+      nixos-backup = "cd ~/.nixos/ && gpo master && cd -";
       nixos-gca = "cd ~/.nixos/ && gca $1 && cd -";
       nixos-replace = "sudo rsync -av --delete ~/.nixos/ /etc/nixos/";
       switch = "sudo nixos-rebuild switch";
