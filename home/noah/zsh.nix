@@ -31,10 +31,11 @@
       gca = "gaa && gc";
 
       # Nixos
+      nixos-backup = "";
       nixos-gca = "cd ~/.nixos/ && gca $1 && cd -";
       nixos-replace = "sudo rsync -av --delete ~/.nixos/ /etc/nixos/";
       switch = "sudo nixos-rebuild switch";
-      rebuild = "nixos-gca $1 && nixos-replace && switch && hydrate";
+      rebuild = "nixos-gca $1 && nixos-backup && nixos-replace && switch && hydrate";
     };
   };
 }
