@@ -23,12 +23,16 @@
       hydrate = "exec zsh";
       
       # Git
+      gra = "git remote add origin";
+
       gs = "git status";
       ga = "git add";
       gaa = "ga --all";
 
-      gc = "git commit -m";
-      gca = "gaa && gc";
+      gc = "git commit -m $1";
+      gca = "gaa && gc $1";
+
+      gp = "git push origin";
 
       # Nixos
       nixos-backup = "";
