@@ -7,9 +7,11 @@
     extensions = with pkgs.vscode-extensions; [
             jnoortheen.nix-ide
         ];
-    
-    userSettings = {
+
+    profiles.noah = {
+      userSettings = {
         "editor.formatOnSave" = true;
       };
+    };
     };
 }
