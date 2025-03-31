@@ -8,10 +8,8 @@
             jnoortheen.nix-ide
         ];
 
-    profiles.noah = {
-      userSettings = {
-        "editor.formatOnSave" = true;
-      };
-    };
-    };
+    # userSettings = {
+    #   "editor.formatOnSave" = true;
+    # };
+  };
 }
