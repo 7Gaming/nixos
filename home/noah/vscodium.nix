@@ -8,8 +8,8 @@
             jnoortheen.nix-ide
         ];
     
-    # userSettings = {
-    #     "editor.formatOnPaste" = "false";
-    #   };
+    userSettings = {
+        "editor.formatOnSave" = true;
+      };
     };
 }

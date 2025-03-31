@@ -58,6 +58,13 @@ nixos-backup() {
   cd -
 }
 
+rebuild-local() {
+  nixos-gca "$1" || return
+  nixos-replace || return
+  switch
+  hydrate
+}
+
 rebuild() {
   nixos-gca "$1" || return
   nixos-backup || return
