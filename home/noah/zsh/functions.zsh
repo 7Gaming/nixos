@@ -1,9 +1,6 @@
-# Disable immediate exit on errors
-set +e
-
 # SSH KeyGen
 c-sshkey() { 
-  ssh-keygen -t ed25519 -C "$1" 
+  ssh-keygen -t ed25519 -C "$@"
 }
 
 # Zsh
@@ -21,23 +18,23 @@ gs() {
 }
 
 ga() {
-  git add 
+  git add "$@"
 }
 
 gaa() { 
-  ga --all
+  ga .
 }
 
 gc() {
-  git commit -m "$1" 
+  git commit -m "$@"
 }
 
 gca() { 
-  gaa && gc "$1" 
+  gaa && gc "$@"
 }
 
 gpush() {
-  git push origin "$1"
+  git push origin "$@"
 }
 
 # NixOS
@@ -50,21 +47,21 @@ switch() {
 }
 
 nixos-gca() {
-  cd ~/.nixos/
-  gca "$1"
+  cd ~/.nixos/ || return
+  gca "$1" || return
   cd -
 }
 
 nixos-backup() {
-  cd ~/.nixos/
-  gpush master
+  cd ~/.nixos/ || return
+  gpush master 
   cd -
 }
 
 rebuild() {
-  nixos-gca "$1"
-  nixos-backup
-  nixos-replace
+  nixos-gca "$1" || return
+  nixos-backup || return
+  nixos-replace || return
   switch
   hydrate
 }

@@ -6,8 +6,8 @@
         description = "noah";
         extraGroups = [ "networkmanager" "wheel" ];
         packages = with pkgs; [
-        kdePackages.kate
-        #  thunderbird
+            kdePackages.kate
+            #  thunderbird
         ];
     };
 }
