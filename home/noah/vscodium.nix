@@ -7,9 +7,9 @@
     extensions = with pkgs.vscode-extensions; [
             jnoortheen.nix-ide
         ];
-    };
-
+    
     userSettings = {
-      "editor.formatOnPaste" = false;
+        "editor.formatOnPaste" = false;
+      };
     };
 }
