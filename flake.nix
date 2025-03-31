@@ -18,7 +18,6 @@
   {
     nixosConfigurations.nixos = lib.nixosSystem {
       inherit system;
-#       specialArgs = { inherit home-manager; };
       modules = [
         ./configuration.nix
         home-manager.nixosModules.home-manager
