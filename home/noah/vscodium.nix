@@ -4,7 +4,8 @@
     enable = true;
     package = pkgs.vscodium;
     extensions = with pkgs.vscode-extensions; [
-            bbenoist.nix
+            # bbenoist.nix
+            jnoortheen.nix-ide
         ];
     };
 }
