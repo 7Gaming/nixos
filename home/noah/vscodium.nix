@@ -4,9 +4,12 @@
     enable = true;
     package = pkgs.vscodium;
 
-    extensions = with pkgs.vscode-extensions; [
-            jnoortheen.nix-ide
-        ];
+    profiles.default = {
+      extensions = with pkgs.vscode-extensions; [
+              jnoortheen.nix-ide
+          ];
+    };
+
 
     # userSettings = {
     #   "editor.formatOnSave" = true;
