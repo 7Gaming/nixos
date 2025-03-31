@@ -8,11 +8,10 @@
       extensions = with pkgs.vscode-extensions; [
               jnoortheen.nix-ide
           ];
+
+    userSettings = {
+      "editor.formatOnSave" = true;
     };
-
-
-    # userSettings = {
-    #   "editor.formatOnSave" = true;
-    # };
+    };
   };
 }
