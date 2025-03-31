@@ -9,7 +9,7 @@
         ];
     
     userSettings = {
-        "editor.formatOnPaste" = false;
+        "editor.formatOnPaste" = "false";
       };
     };
 }
