@@ -9,7 +9,10 @@
               jnoortheen.nix-ide
           ];
 
-      userSettings = {};
+      userSettings = {
+        "files.autoSave" = "off";
+#         "editor.formatOnSave" = true;
+      };
     };
   };
 }
