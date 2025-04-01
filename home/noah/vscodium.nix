@@ -11,7 +11,7 @@
 
       userSettings = {
         "files.autoSave" = "off";
-#         "editor.formatOnSave" = true;
+        "editor.formatOnSave" = true;
       };
     };
   };
