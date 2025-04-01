@@ -1,4 +1,5 @@
-inputs: {
+{ pkgs, ... }@inputs:
+{
   # Bootloader.
   boot.loader.systemd-boot.enable = false;
   boot.loader.grub.enable = true;
