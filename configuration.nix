@@ -6,29 +6,28 @@
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/30A9-E7AA";
     fsType = "vfat";
-    options = [ "fmask=0077" "dmask=0077" ];
+    options = [
+      "fmask=0077"
+      "dmask=0077"
+    ];
   };
 
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./configuration
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ./configuration
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = false;
-#   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "nodev";
-#   boot.loader.grub.efiSupport = true;
   boot.loader.grub.useOSProber = true;
-#   boot.loader.grub.efiInstallAsRemovable = true;
-#   boot.loader.efi.efiSysMountPoint = "/mnt/boot";
 
   # Kernel Version
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  # Hostname
+  networking.hostName = "nixos";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -104,11 +103,11 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-    git
-  ];
+  # environment.systemPackages = with pkgs; [
+  #   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+  #   #  wget
+  #   git
+  # ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -132,5 +131,8 @@
   # Don't change this without reading what it does
   system.stateVersion = "24.11";
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 }
