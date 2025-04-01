@@ -9,9 +9,9 @@
               jnoortheen.nix-ide
           ];
 
-      userSettings = {
-        "editor.formatOnSave" = true;
-      };
+      # userSettings = {
+      #   "editor.formatOnSave" = true;
+      # };
     };
   };
 }
