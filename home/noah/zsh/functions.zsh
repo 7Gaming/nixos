@@ -39,7 +39,7 @@ gpush() {
 
 # NixOS
 nixos-replace() { 
-  sudo rsync -av --delete ~/.nixos/ /etc/nixos/ 
+  sudo rsync -av --delete --exclude=".git" ~/.nixos/ /etc/nixos/ 
 }
 
 switch() { 
