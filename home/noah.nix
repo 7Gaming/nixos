@@ -1,5 +1,13 @@
-{ pkgs, ... }@inputs: {
-  imports = [ ./noah ];
+{ inputs, pkgs, ... }:
+{
+  nixpkgs = {
+    overlays = [
+      inputs.nur.overlay
+    ];
+    config = {
+      allowUnfree = true;
+    };
+  };
 
   home = {
     username = "noah";
@@ -8,4 +16,6 @@
 
     packages = with pkgs; [ nixfmt-rfc-style ];
   };
+
+  imports = [ ./noah ];
 }
