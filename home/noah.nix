@@ -1,8 +1,8 @@
-{ pkgs, ... }@inputs:
+{ nur, pkgs, ... }:
 {
   nixpkgs = {
     overlays = [
-      inputs.nur.overlay
+      nur.overlay
     ];
     config = {
       allowUnfree = true;
