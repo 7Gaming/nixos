@@ -23,14 +23,14 @@
       system = "x86_64-linux";
       lib = nixpkgs.lib;
 
-      specialArgs = {
-        inherit nur;
-      };
+      # specialArgs = {
+      #   inherit nur;
+      # };
     in
     {
       nixosConfigurations.nixos = lib.nixosSystem {
         inherit system;
-        inherit specialArgs;
+        # inherit specialArgs;
 
         modules = [
           ./configuration.nix
