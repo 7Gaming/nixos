@@ -9,6 +9,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,30 +25,26 @@
     {
       nixpkgs,
       home-manager,
+      plasma-manager,
       nur,
       ...
     }@inputs:
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;
-
-      # specialArgs = {
-      #   inherit nur;
-      # };
     in
     {
       nixosConfigurations.nixos = lib.nixosSystem {
         inherit system;
-        # inherit specialArgs;
 
         modules = [
           nur.modules.nixos.default
+          plasma-manager.homeManagerModules.plasma-manager
           ./configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            # home-manager.extraSpecialArgs = specialArgs;
             home-manager.users.noah = import ./home/noah.nix;
           }
         ];
