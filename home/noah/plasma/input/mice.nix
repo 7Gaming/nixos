@@ -2,7 +2,8 @@ inputs: {
   programs.plasma.input.mice = [
     {
       enable = true;
-      name = "Default Mouse";
+      name = "Logitech G203 Prodigy Gaming Mouse";
+      vendorId = "046d";
 
       acceleration = -0.25;
 
