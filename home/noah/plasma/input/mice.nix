@@ -4,8 +4,7 @@ inputs: {
       enable = true;
       name = "Default Mouse";
 
-      scrollSpeed = 1;
-      pointerSpeed = -0.25;
+      acceleration = -0.25;
 
       accelerationProfile = "none";
       middleButtonEmulation = false;
