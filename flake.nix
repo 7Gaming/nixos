@@ -23,9 +23,9 @@
       system = "x86_64-linux";
       lib = nixpkgs.lib;
 
-      # specialArgs = {
-      #   inherit nur;
-      # };
+      specialArgs = {
+        inherit nur;
+      };
     in
     {
       nixosConfigurations.nixos = lib.nixosSystem {
@@ -38,7 +38,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            # home-manager.extraSpecialArgs = specialArgs;
+            home-manager.extraSpecialArgs = specialArgs;
             home-manager.users.noah = import ./home/noah.nix;
           }
         ];

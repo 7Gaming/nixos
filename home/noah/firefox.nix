@@ -1,18 +1,18 @@
-{ config, pkgs, ... }:
+{ nur, pkgs, ... }:
 
 {
   programs.firefox = {
     enable = true;
 
-    policies = {
-      DisableFirefoxStudies = true;
-      DisablePocket = true;
-      DisableSafeMode = true;
-      DisableSetDesktopBackground = true;
-      DisableTelemetry = true;
-      DontCheckDefaultBrowser = true;
-      HardwareAcceleration = true;
-    };
+    # policies = {
+    #   DisableFirefoxStudies = true;
+    #   DisablePocket = true;
+    #   DisableSafeMode = true;
+    #   DisableSetDesktopBackground = true;
+    #   DisableTelemetry = true;
+    #   DontCheckDefaultBrowser = true;
+    #   HardwareAcceleration = true;
+    # };
 
     profiles = {
       default = {
@@ -21,9 +21,10 @@
         id = 0;
         isDefault = true;
 
-        # extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-        #   enhancer-for-youtube # non-free
-        # ];
+        extensions = with nur.repos.rycee.firefox-addons; [
+          enhancer-for-youtube # non-free
+        ];
+
         # search = {
         #   force = true;
         # };
