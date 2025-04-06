@@ -39,12 +39,12 @@
 
         modules = [
           nur.modules.nixos.default
-          plasma-manager.homeManagerModules.plasma-manager
           ./configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
             home-manager.users.noah = import ./home/noah.nix;
           }
         ];
