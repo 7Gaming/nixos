@@ -22,8 +22,10 @@
         isDefault = true;
 
         extensions = {
+          # https://nur.nix-community.org/repos/rycee/
           packages = with pkgs.nur.repos.rycee.firefox-addons; [
-            enhancer-for-youtube # non-free
+            sponsorblock
+            ublock-origin
           ];
         };
 

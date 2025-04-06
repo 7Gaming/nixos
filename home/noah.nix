@@ -1,5 +1,6 @@
 { pkgs, ... }:
 {
+  # https://nix-community.github.io/home-manager/options.xhtml
   home = {
     username = "noah";
     homeDirectory = "/home/noah";
