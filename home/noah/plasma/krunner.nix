@@ -3,6 +3,6 @@ inputs: {
     activateWhenTypingOnDesktop = true;
     historyBehavior = "enableSuggestions";
     position = "center";
-    # shortcuts.launch = "Super";
+    shortcuts.launch = "Super";
   };
 }
