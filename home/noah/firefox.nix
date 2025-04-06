@@ -3,6 +3,17 @@
 {
   config.programs.firefox = {
     enable = true;
+
+    policies = {
+      DisableFirefoxStudies = true;
+      DisablePocket = true;
+      DisableSafeMode = true;
+      DisableSetDesktopBackground = true;
+      DisableTelemetry = true;
+      DontCheckDefaultBrowser = true;
+      HardwareAcceleration = true;
+    };
+
     profiles = {
       default = {
         name = "Noah";
