@@ -1,4 +1,4 @@
-{ nur, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   programs.firefox = {
@@ -21,9 +21,11 @@
         id = 0;
         isDefault = true;
 
-        extensions = with nur.repos.rycee.firefox-addons; [
-          enhancer-for-youtube # non-free
-        ];
+        extensions = {
+          packages = with pkgs.nur.repos.rycee.firefox-addons; [
+            enhancer-for-youtube # non-free
+          ];
+        };
 
         # search = {
         #   force = true;
