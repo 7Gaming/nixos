@@ -28,7 +28,7 @@ inputs: {
       alignment = "center";
       floating = true;
       hiding = "autohide";
-      lengthMode = "fit";
+      # lengthMode = "fit";
       opacity = "opaque";
 
       widgets = [
@@ -39,7 +39,7 @@ inputs: {
               launchers = [
                 "applications:firefox.desktop"
                 "applications:org.kde.dolphin.desktop"
-                "applications:code-url-handler.desktop"
+                "applications:code.desktop"
                 "applications:org.kde.konsole.desktop"
               ];
             };
