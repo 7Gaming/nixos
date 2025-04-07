@@ -18,7 +18,10 @@
     };
 
     # Functions
-    initExtraFirst = "source /etc/nixos/home/noah/zsh/functions.zsh";
+    initExtraFirst = ''
+      source /etc/nixos/home/noah/zsh/functions.zsh
+      source /etc/nixos/home/noah/zsh/p10k.zsh
+    '';
 
     plugins = [
       {
