@@ -10,26 +10,20 @@ inputs: {
       opacity = "opaque";
 
       widgets = [
-        # "org.kde.plasma.kickoff"
-        # "org.kde.plasma.pager"
-        # "org.kde.plasma.icontasks"
         "org.kde.plasma.panelspacer"
-        # "org.kde.plasma.marginsseparator"
-        # "org.kde.plasma.digitalclock"
         {
           digitalClock = {
             date.enable = false;
           };
         }
-        # "org.kde.plasma.marginsseparator"
         "org.kde.plasma.panelspacer"
         "org.kde.plasma.systemtray"
-        # "org.kde.plasma.showdesktop"
       ];
     }
 
     {
       height = 50;
+      minLength = 750;
       location = "bottom";
       alignment = "center";
       floating = true;
@@ -38,9 +32,6 @@ inputs: {
       opacity = "opaque";
 
       widgets = [
-        # "org.kde.plasma.kickoff"
-        # "org.kde.plasma.pager"
-        # "org.kde.plasma.icontasks"
         {
           name = "org.kde.plasma.icontasks";
           config = {
@@ -48,16 +39,12 @@ inputs: {
               launchers = [
                 "applications:firefox.desktop"
                 "applications:org.kde.dolphin.desktop"
-                "applications:code.desktop"
+                "applications:code-url-handler.desktop"
                 "applications:org.kde.konsole.desktop"
               ];
             };
           };
         }
-        # "org.kde.plasma.marginsseparator"
-        # "org.kde.plasma.systemtray"
-        # "org.kde.plasma.digitalclock"
-        # "org.kde.plasma.showdesktop"
       ];
     }
   ];
